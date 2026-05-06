@@ -31,7 +31,7 @@ export default function Sidebar() {
         >
           My Tasks
         </Link>
-        {session?.user?.role === "ADMIN" && (
+        {(session?.user as any)?.role === "ADMIN" && (
           <Link
             href="/team"
             className={`${styles.navItem} ${pathname.startsWith("/team") ? styles.active : ""}`}
@@ -48,7 +48,7 @@ export default function Sidebar() {
         <div className={styles.avatar}>{session?.user?.name?.charAt(0) || "U"}</div>
         <div className={styles.userInfo}>
           <span className={styles.userName}>{session?.user?.name || "User"}</span>
-          <span className={styles.userRole}>{session?.user?.role || "MEMBER"}</span>
+          <span className={styles.userRole}>{(session?.user as any)?.role || "MEMBER"}</span>
         </div>
         <div
           style={{

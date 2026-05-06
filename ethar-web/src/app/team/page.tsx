@@ -25,7 +25,7 @@ export default async function TeamPage() {
     redirect("/login");
   }
 
-  if (session.user?.role !== "ADMIN") {
+  if ((session.user as any)?.role !== "ADMIN") {
     return (
       <AppLayout>
         <div style={{ padding: "2rem", textAlign: "center" }}>

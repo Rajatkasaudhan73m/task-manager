@@ -33,7 +33,7 @@ export default async function ProjectsPage() {
       <header className={styles.header}>
         <h1>Projects</h1>
         <div className={styles.headerActions}>
-          {session.user?.role === "ADMIN" && (
+          {(session.user as any)?.role === "ADMIN" && (
             <Link href="/projects/new" className="btn-primary">
               + New Project
             </Link>
@@ -79,7 +79,7 @@ export default async function ProjectsPage() {
           <div className={styles.emptyState} style={{ gridColumn: "1 / -1" }}>
             <p>
               No projects found.{" "}
-              {session.user?.role === "ADMIN"
+              {(session.user as any)?.role === "ADMIN"
                 ? "Create one to get started!"
                 : "Ask your admin to assign you to a project."}
             </p>
