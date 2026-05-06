@@ -1,0 +1,23 @@
+# Root gitignore
+node_modules/
+.env
+.env.local
+*.pem
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Backend
+ethar-backend/node_modules/
+ethar-backend/dist/
+ethar-backend/prisma/dev.db
+ethar-backend/prisma/dev.db-journal
+ethar-backend/.env
+
+# Frontend
+ethar-web/node_modules/
+ethar-web/.next/
+ethar-web/out/
+ethar-web/.env*
+ethar-web/.vercel
+ethar-web/*.tsbuildinfo
