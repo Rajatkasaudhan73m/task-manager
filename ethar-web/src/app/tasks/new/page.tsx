@@ -20,7 +20,7 @@ export default function NewTaskPage() {
   useEffect(() => {
     if (session?.user) {
       const token = (session.user as any).backendToken;
-      fetch("http://localhost:5000/api/projects", {
+      fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/projects`, {
         headers: { Authorization: `Bearer ${token}` },
       })
         .then((res) => res.json())
@@ -42,7 +42,7 @@ export default function NewTaskPage() {
     const token = (session.user as any).backendToken;
 
     try {
-      const res = await fetch("http://localhost:5000/api/tasks", {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/tasks`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

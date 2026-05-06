@@ -7,7 +7,7 @@ import AppLayout from "@/components/AppLayout";
 
 async function fetchDashboardData(token: string) {
   try {
-    const tasksRes = await fetch("http://localhost:5000/api/tasks", {
+    const tasksRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/tasks`, {
       headers: { Authorization: `Bearer ${token}` },
       cache: "no-store",
     });
